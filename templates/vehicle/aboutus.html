@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <style media="screen">
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .jumbotron {
+      margin: 0;
+      padding: 50px 0;
+      background-color: #343a40;
+      color: #fff;
+      text-align: center;
+    }
+
+    .jumbotron h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .jumbotron p.lead {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    .jumbotron .btn {
+      margin-top: 20px;
+    }
+
+    .alert {
+      margin: 20px auto;
+      text-align: center;
+      background-color: #28a745;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .marquee-container {
+      margin: 20px 0;
+      overflow: hidden;
+      background-color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .marquee-container img {
+      margin: 0 10px;
+    }
+
+    .about-us {
+      width: 100%;
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    .about-us h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #343a40;
+      padding: 10px;
+      background: linear-gradient(to right, #28a745, #218838);
+      color: #fff;
+      border-radius: 5px;
+      display: inline-block;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .about-us p {
+      font-size: 1.4em;
+      color: #666;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .about-us ul {
+      margin-bottom: 20px;
+    }
+
+    .about-us ul li {
+      font-size: 1.2em;
+      color: grey;
+      margin-bottom: 10px;
+    }
+  </style>
+
+  <title>About Us</title>
+</head>
+
+<body>
+
+  {% include "vehicle/navbar.html" %}
+  
+  <div class="about-us">
+    <center><h2>About Us</h2></center>
+    <p>Welcome to our Website, where we’re revolutionizing the way vehicle servicing is managed. Our platform is dedicated to providing a seamless and efficient solution for all your automotive needs.</p>
+    <p><strong>Our Mission:</strong> Our mission is to simplify vehicle maintenance and repairs, ensuring that every interaction is straightforward and hassle-free. By leveraging advanced technology, we aim to connect customers with skilled mechanics and provide real-time updates throughout the service process.</p>
+    <p><strong>What We Offer:</strong>
+      <ul>
+        <li><strong>Comprehensive Services:</strong> Whether it's routine maintenance or complex repairs, we cover all aspects of vehicle care with precision and professionalism.</li>
+        <li><strong>Skilled Mechanics:</strong> Our network consists of experienced and certified mechanics, committed to delivering high-quality service for your vehicle.</li>
+        <li><strong>Transparency:</strong> We offer clear, detailed invoices and real-time tracking of your service requests, ensuring you are informed at every step.</li>
+        <li><strong>Customer Focus:</strong> Your satisfaction is our top priority. We value your feedback and continuously strive to improve our services to meet your needs.</li>
+      </ul>
+    </p>
+    <p><strong>Our Values:</strong>
+      <ul>
+        <li><strong>Quality:</strong> We uphold the highest standards in every aspect of our service, ensuring reliable and efficient care for your vehicle.</li>
+        <li><strong>Integrity:</strong> Honesty and transparency are at the core of our operations. We believe in clear communication and fair practices.</li>
+        <li><strong>Innovation:</strong> We embrace the latest technological advancements to enhance your service experience and streamline processes.</li>
+        <li><strong>Customer Satisfaction:</strong> We are dedicated to exceeding your expectations and ensuring that your vehicle receives the best possible care.</li>
+      </ul>
+    </p>
+  </div>
+
+  <div class="marquee-container">
+    <marquee behavior="scroll" direction="left">
+      <img src="{% static "images/ferrari.png" %}" width="120" height="80" alt="ferrari" />
+      <img src="{% static "images/ford.png" %}" width="120" height="80" alt="ford" />
+      <img src="{% static "images/lambo.png" %}" width="120" height="80" alt="lambo" />
+      <img src="{% static "images/mahindra.png" %}" width="120" height="80" alt="mahindra" />
+      <img src="{% static "images/tvs.png" %}" width="120" height="80" alt="tvs" />
+      <img src="{% static "images/tata.png" %}" width="120" height="80" alt="tata" />
+      <img src="{% static "images/hero.png" %}" width="120" height="80" alt="hero" />
+      <img src="{% static "images/rolls.png" %}" width="120" height="80" alt="rolls" />
+      <img src="{% static "images/suzuki.png" %}" width="120" height="80" alt="suzuki" />
+    </marquee>
+  </div>
+
+  {% include "vehicle/footer.html" %}
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar {
+      background-color: blue;
+    }
+
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+      color: white !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: white !important;
+      font-size: 18px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    
+
+    .navbar-toggler {
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%288%2C 8%2C 8%2C 0.5%29' stroke-width='2' linecap='round' linejoin='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    .navbar-collapse {
+      justify-content: space-between;
+    }
+
+    .nav-item:hover .nav-link {
+      background-color: #eccc68;
+      color: #ff4757 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bs-example">
+    <nav class="navbar navbar-expand-md fixed-top">
+      <a href="/" class="navbar-brand">Garage Management</a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav">
+          <a href="/" class="nav-item nav-link active home-link">Home</a>
+          <a href="/customerclick" class="nav-item nav-link">Customer</a>
+          <a href="/mechanicsclick" class="nav-item nav-link">Mechanics</a>
+          <a href="/adminclick" class="nav-item nav-link">Admin</a>
+        </div>
+
+        <div class="navbar-nav">
+          <a href="/aboutus" class="nav-item nav-link">About Us</a>
+          <a href="contactus" class="nav-item nav-link">Contact Us</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</body>
+</html>

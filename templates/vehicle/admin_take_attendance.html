@@ -1,0 +1,167 @@
+{% extends 'vehicle/adminbase.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style media="screen">
+    body {
+      background-color: #f5f5f5;
+    }
+
+    h6 {
+      text-align: center;
+      font-size: 1.5em;
+      margin: 20px 0;
+    }
+
+    .container {
+      margin-top: 50px;
+    }
+
+    .panel {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .panel-heading {
+      background-color: #007bff !important;
+      color: white !important;
+      text-align: center;
+      padding: 15px;
+      font-size: 1.25em;
+    }
+
+    .panel-title {
+      margin: 0;
+    }
+
+    .table-hover tbody tr:hover td {
+      background-color: #f1f1f1;
+    }
+
+    .form-control {
+      margin: 10px 0;
+      border-radius: 5px;
+    }
+
+    .btn-submit {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto;
+      font-size: 1em;
+    }
+
+    .btn-submit:hover {
+      background-color: #218838;
+    }
+
+    .form-wrapper {
+      margin: 0 auto;
+      width: 60%;
+    }
+
+    .note {
+      text-align: center;
+      height: 80px;
+      background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+      color: #fff;
+      font-weight: bold;
+      line-height: 80px;
+      border-radius: 10px 10px 0 0;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .form-content {
+      padding: 5%;
+      border: 1px solid #ced4da;
+      margin-bottom: 2%;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+      background-color: #f7f7f7;
+    }
+
+    .btnSubmit {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 1%;
+      width: 20%;
+      cursor: pointer;
+      background: #0062cc;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+   
+
+    .back-button {
+      border: none;
+      border-radius: 1.3rem;
+      padding: 1%;
+      width: 19%;
+      cursor: pointer;
+      background: #0062cc;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      transition: background 0.3s ease;
+      display: inline-block;
+      margin-top: 20px;
+
+      
+    }
+
+ 
+
+  </style>
+</head>
+
+<div class="container">
+  <div class="form-wrapper">
+    <form method="post" autocomplete="off">
+      <div class="panel panel-primary">
+        <div class="note">
+            <p>Attendance</p>
+        </div>
+        <div class="panel-body">
+          <table class="table table-hover" id="dev-table">
+            <thead>
+              <tr>
+                <th>Mechanic Name</th>
+                <th>Present/Absent</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% csrf_token %}
+              {% for m in mechanics %}
+              <tr>
+                <td>{{ m.get_name }}</td>
+                <td>{% render_field aform.present_status class="form-control" %}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <div>
+            {% render_field aform.date class="form-control" placeholder="Enter Date mm/dd/yyyy" %}
+          </div>
+          <button type="submit" class="btnSubmit">Submit</button>
+          <a href="{% url 'admin-mechanic-attendance' %}" class="back-button">Back</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock content %}

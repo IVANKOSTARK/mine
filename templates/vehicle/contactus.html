@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    .alert-success {
+      margin-top: 30px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .form-container {
+      margin-top: 20px;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-control {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ced4da;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 18px;
+      transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+
+    .marquee-container {
+      margin-top: 20px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .marquee-container img {
+      margin: 0 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  {% include "vehicle/navbar.html" %}
+  <br><br>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <center>
+          <h3 class='alert alert-success'>Send Us Your Valuable Feedback!</h3>
+          <div class="form-container">
+            <form method="POST">
+              {% csrf_token %}
+              <div class="form-group">
+                <table class="table">
+                  {{ form.as_table }}
+                </table>
+              </div>
+              <input type="submit" value="Send Message" class='btn btn-primary btn-lg'>
+            </form>
+          </div>
+        </center>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="container marquee-container">
+    <marquee behavior="scroll" direction="left">
+      <img src="{% static 'images/ferrari.png' %}" width="120" height="80" alt="ferrari" />
+      <img src="{% static 'images/ford.png' %}" width="120" height="80" alt="ford" />
+      <img src="{% static 'images/lambo.png' %}" width="120" height="80" alt="lambo" />
+      <img src="{% static 'images/mahindra.png' %}" width="120" height="80" alt="mahindra" />
+      <img src="{% static 'images/tvs.png' %}" width="120" height="80" alt="tvs" />
+      <img src="{% static 'images/tata.png' %}" width="120" height="80" alt="tata" />
+      <img src="{% static 'images/hero.png' %}" width="120" height="80" alt="hero" />
+      <img src="{% static 'images/rolls.png' %}" width="120" height="80" alt="rolls" />
+      <img src="{% static 'images/suzuki.png' %}" width="120" height="80" alt="suzuki" />
+    </marquee>
+  </div>
+
+  {% include "vehicle/footer.html" %}
+</body>
+
+</html>

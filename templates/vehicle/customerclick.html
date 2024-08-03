@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <style media="screen">
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+
+    .jumbotron {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      padding: 50px;
+      background: rgb(245,245,245);
+background: linear-gradient(305deg, rgba(245,245,245,1) 0%, rgba(226,255,254,1) 50%, rgba(255,238,238,1) 100%);
+      height: 100vh; /* Full viewport height */
+    }
+
+    .jumbotron-content {
+      background: rgba(255, 255, 255, 0.8); /* White transparent background */
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+    }
+
+    .jumbotron h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    .jumbotron p.lead {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      color: #333; /* Darker text for better contrast */
+    }
+
+    .jumbotron .btn {
+      margin: 10px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  {% include "vehicle/navbar.html" %}
+  <div class="jumbotron">
+    <div class="jumbotron-content">
+      <h1 class="display-4">Hello</h1>
+      <p class="lead">Welcome to our Website!!!</p>
+      <hr class="my-4">
+      <p>You can access various features after Login.</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="customersignup" role="button">Create Your Account</a>
+        <a class="btn btn-primary btn-lg" href="customerlogin" role="button">Login</a>
+      </p>
+    </div>
+  </div>
+  {% include "vehicle/footer.html" %}
+</body>
+
+</html>

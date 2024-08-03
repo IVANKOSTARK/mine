@@ -1,0 +1,111 @@
+{% extends 'vehicle/adminbase.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<head>
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    .note {
+      text-align: center;
+      height: 80px;
+      background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+      color: #fff;
+      font-weight: bold;
+      line-height: 80px;
+      border-radius: 10px 10px 0 0;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .form-content {
+      padding: 5%;
+      border: 1px solid #ced4da;
+      margin-bottom: 2%;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+      background-color: #f7f7f7;
+    }
+
+    .form-control {
+      border-radius: 1.5rem;
+      padding: 15px;
+      font-size: 16px;
+      border: 1px solid #ced4da;
+      box-shadow: inset 0px 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .btnSubmit {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 1%;
+      width: 20%;
+      cursor: pointer;
+      background: #0062cc;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btnSubmit:hover {
+      background: #004bb5;
+    }
+
+    .xyz {
+      display: table;
+      margin-right: auto;
+      margin-left: auto;
+      width: 50%;
+    }
+
+    .back-button {
+      border: none;
+      border-radius: 1.3rem;
+      padding: 1%;
+      width: 19%;
+      cursor: pointer;
+      background: #0062cc;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      transition: background 0.3s ease;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .back-button:hover {
+      background: #004bb5;
+    }
+
+  </style>
+</head>
+
+<br><br><br><br>
+<form method="post" autocomplete="off">
+  {% csrf_token %}
+  <div class="container register-form">
+    <div class="form xyz">
+      <div class="form-content">
+        <div class="note">
+            <p>PLEASE ENTER DATE TO CHECK ATTENDANCE</p>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <br><center>
+              {% render_field form.date class="form-control" placeholder="Enter date mm/dd/yyyy" %}</center>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btnSubmit">Submit</button>
+        <a href="{% url 'admin-mechanic-attendance' %}" class="back-button">Back</a>
+      </div>
+    </div>
+  </div>
+</form>
+
+{% endblock content %}

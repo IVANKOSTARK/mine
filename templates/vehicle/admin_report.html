@@ -1,0 +1,83 @@
+{% extends 'vehicle/adminbase.html' %}
+{% block content %}
+
+	<!-- main content -->
+	<div class="wrapper">
+
+		<!-- ****** table start ********** -->
+		<div class="row">
+			<div class="col-12 col-m-12 col-sm-12">
+				<div class="card">
+					<div class="card-header">
+						<h3 style="color:red; text-align:center">Report
+							<button onclick="printTable()" style="float: right; background-color: #4CAF50; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 4px;">
+								Print
+							</button>
+						</h3>
+					</div>
+					<div class="card-content">
+						<table id="report-table">
+							<thead>
+								<tr>
+									<th>Vehicle Name</th>
+									<th>Vehicle Number</th>
+									<th>Date</th>
+									<th>Cost</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for r in reports %}
+								<tr>
+									<td>{{r.vehicle_name}}</td>
+									<td>{{r.vehicle_no}}</td>
+									<td>{{r.date}}</td>
+									<td>{{r.cost}}</td>
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ****** table end ********** -->
+
+		<!-- Back to Dashboard Button -->
+		<a href="{% url 'admin-dashboard' %}" class="back-button">Back to Dashboard</a>
+
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	</div>
+
+	<!-- end main content -->
+
+	<script>
+		function printTable() {
+			var printContents = document.getElementById('report-table').outerHTML;
+			var originalContents = document.body.innerHTML;
+
+			document.body.innerHTML = '<html><head><title>Print</title></head><body>' + printContents + '</body></html>';
+			window.print();
+			document.body.innerHTML = originalContents;
+		}
+	</script>
+
+	<style>
+		.back-button {
+			display: block;
+			width: 200px;
+			margin: 20px auto;
+			padding: 10px;
+			color: white;
+			background-color: blue;
+			text-align: center;
+			border-radius: 5px;
+			text-decoration: none;
+			font-size: 18px;
+		}
+
+		.back-button:hover {
+			background-color: darkblue;
+		}
+	</style>
+
+{% endblock content %}

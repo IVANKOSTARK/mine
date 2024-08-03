@@ -1,0 +1,117 @@
+{% extends 'vehicle/adminbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<head>
+  <style media="screen">
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .form-container {
+      margin-left: auto;
+      margin-right: auto;
+      width: 60%;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type=text], select, input[type=number], textarea {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type=submit] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+    label {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #555;
+    }
+    .back-button {
+      display: block;
+      width: 200px;
+      margin: 20px auto;
+      padding: 10px;
+      color: white;
+      background-color: blue;
+      text-align: center;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .back-button:hover {
+      background-color: darkblue;
+    }
+  </style>
+</head>
+
+<br><br><br><br><br>
+<h1>MAKE REQUEST</h1>
+<div class="form-container">
+  <form method="post">
+    {% csrf_token %}
+    <label for="category">Vehicle Category</label>
+    {% render_field enquiry.category class="form-control" %}<br>
+
+    <label for="vehicle_no">Vehicle Number</label>
+    {% render_field enquiry.vehicle_no class="form-control" placeholder="Vehicle Number" %}
+
+    <label for="vehicle_name">Vehicle Name</label>
+    {% render_field enquiry.vehicle_name class="form-control" placeholder="Vehicle Name" %}
+
+    <label for="vehicle_brand">Vehicle Brand</label>
+    {% render_field enquiry.vehicle_brand class="form-control" placeholder="Vehicle Brand" %}
+
+    <label for="vehicle_model">Vehicle Model</label>
+    {% render_field enquiry.vehicle_model class="form-control" placeholder="Vehicle Model" %}
+
+    <label for="problem_description">Problem Description</label>
+    {% render_field enquiry.problem_description class="form-control" placeholder="Problem Description" %}
+
+    <label for="cost">Repair Cost</label>
+    {% render_field adminenquiry.cost class="form-control" placeholder="Repair Cost" %}
+
+    <label for="customer">Customer</label>
+    {% render_field adminenquiry.customer class="form-control" %}
+
+    <label for="mechanic">Mechanic</label>
+    {% render_field adminenquiry.mechanic class="form-control" %}
+
+    <input type="submit" value="Submit">
+
+  </form>
+</div>
+<a href="{% url 'admin-request' %}" class="back-button">Back</a>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+{% endblock content %}
